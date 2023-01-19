@@ -13,7 +13,9 @@
 
 .boot-nav{
     width: 100%;
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem; */
+    background: #52ACFF;
+    
 }
 
 .boot-nav-collapse{
@@ -25,7 +27,7 @@
 }
 
 .boot-a-tags a{
-    color: #1E2330!important;
+    color: white!important;
     margin-right: 5rem;
     font-family: 'Poppins', sans-serif;;
 }

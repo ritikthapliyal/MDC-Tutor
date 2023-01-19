@@ -1,9 +1,10 @@
-import { Hheader } from "../Components/Headers/Hheader";
+
 import "./LoginBg.css";
 import bgImg from "../assets/login-background.svg";
 import yelloimg from "../assets/yellow-circle.svg";
 import { LoginBox } from "./LoginBox";
 import { Otpbox } from "./Otpbox";
+import { Hheader } from "../Components/Headers/Hheader";
 
 export const LoginBg = () => {
   return (
@@ -30,7 +31,7 @@ export const LoginBg = () => {
               <span style={{ color: "white" }}> just for you</span>
             </p>
           </div>
-                 <LoginBg/>
+                 <LoginBox/>
         </div>
         <img src={yelloimg} className="yellow-circle" />
       </div>

@@ -13,7 +13,7 @@ function App() {
  <>
   <Router>
       <Routes>
-      <Route exact path="/" element={<LoginBg/>}/>
+         <Route exact path="/" element={<Basicdetails/>}/>
       </Routes>
   </Router>
  </>

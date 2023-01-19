@@ -7,7 +7,6 @@
 .bd-text {
   width: 50%;
   height: 100%;
-
 }
 .bd-text-title {
   width: 50%;
@@ -46,41 +45,169 @@
   padding-bottom: 2rem;
 }
 
-.bd{
-    width: 100%;
+.bd {
+  width: 100%;
 }
 
-.form-add{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.form-add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.form-add >div{
+.form-add > div {
   width: 50%;
   display: flex;
 }
 
-.add-city{
+.add-city {
   justify-content: flex-start;
 }
-.add-state{
+.add-state {
   justify-content: flex-end;
 }
 
-.empty-space{
+.bd-textarea {
+  width: 100%;
+  height: 100%;
+}
+
+.bd-textarea > textarea {
+  width: 100%;
+  height: 90%;
+  border: 1px solid #4e89fc;
+  outline: 1px solid #4e89fc;
+  padding: 1rem;
+  font-family: "Poppins";
+  color: #686868;
+  font-weight: 500;
+  border-radius: 14px;
+}
+
+.upload-exp {
+  width: 100%;
+  height: 50%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.upload-exp > h2 {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+.uploaded-file {
+  width: 100%;
+  height: 40%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  overflow-y: scroll;
+}
+
+.up-file {
+  width: 100%;
+  height: 4.5rem;
+  background: #f5f5f5;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  color: #797979;
+  margin-bottom: 5px;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.exp-file-uploader {
+  width: 100%;
+  height: 35%;
+  display: flex;
+}
+
+.file-upl-btn {
+  height: 100%;
+  width: 40%;
+  position: relative;
+}
+.file-upl-btn > span {
+  color: white;
+  position: absolute;
+  z-index: 1;
+  top: 1.8rem;
+  left: 1.5rem;
+}
+
+.drag-and-drop {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-pp {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.user-photo {
+  width: 20rem;
+  height: 70%;
+  border-radius: 50%;
+}
+
+.user-photo>img{
+  height: 100%;
+  width: 100%;
+}
+
+.upl-photo{
+  width: 30%;
+  height: 10%;
+}
+
+.upl-photo>button{
+  height: 100%;
+  width: 100%;
+}
+
+.empty-space {
   width: 40%;
 }
 
-.f-btns{
+.f-btns {
   width: 60%;
 }
 
-.form-btns{
+.form-btns {
   display: flex;
 }
 
-.f-btns{
+.f-btns {
   display: flex;
   justify-content: space-between;
 }
+
+/***file uploader class***/
+
+.sc-bcXHqe {
+  width: 100%;
+  height: 90% !important;
+  border: 1px solid #c9cdd5 !important;
+  border-radius: 10px;
+}
+
+.sc-bcXHqe > svg {
+  display: none;
+}
+
+/***file uploader class***/

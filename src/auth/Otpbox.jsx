@@ -1,5 +1,8 @@
 import "./Otp.css"
 export const Otpbox = () => {
+
+   
+
   return (
     <>
       <div className="otp-container">

@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import { LoginBg } from "./auth/LoginBg";
 import { Basicdetails } from "./Components/Registration/Basicdetails";
+import { YearOfExp } from "./Components/Registration/YearOfExp";
+import { ProfilePhoto } from "./Components/Registration/ProfilePhoto";
 
 
 function App() {

@@ -547,6 +547,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setPrAparatus(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-email bd">
@@ -557,6 +560,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setPrAparatus(e.target.value);
+                    }}
                   />
                 </div>
 

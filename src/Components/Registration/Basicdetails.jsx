@@ -15,6 +15,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { useState } from "react";
 import { YearOfExp } from "./YearOfExp";
 import { ProfilePhoto } from "./ProfilePhoto";
+import { saveTutorDetails } from "../../functions/utils";
 /****************************Materail-UI**************************/
 
 export const Basicdetails = () => {
@@ -56,48 +57,64 @@ export const Basicdetails = () => {
     ChangeTextAreaCount(e.target.value.length);
   };
 
-  const handleNext = (e) => {
+  const handleNext = async(e) => {
+    let document = {}
     if (pageCount == 1) {
       if (
-        name == "" ||
-        email == "" ||
-        acadQualification == "" ||
-        city == "" ||
-        state == "" ||
-        dob == ""
+        name == "" || email == "" || acadQualification == "" || city == "" || state == "" || dob == ""
       ) {
+        return;
         // alert to fill all acad details
       } else {
         // api to save details till now and pageCount
-        setPageCount(pageCount + 1);
+        document = {
+          full_name:name,
+          email,
+          dob,
+          qualification:acadQualification,
+          city,
+          state,
+        }
       }
-    } else if (pageCount == 2) {
+    } 
+    else if (pageCount == 2) {
       if (prlang == "") {
+        return
       } else {
-        setPageCount(pageCount + 1);
+        document = {primary_language:prlang}
       }
     } else if (pageCount == 3) {
       if (seclang == "") {
       } else {
-        setPageCount(pageCount + 1);
+        document = {secondary_language:seclang}
       }
     } else if (pageCount == 4) {
       if (prAparatus == "") {
+        alert("Blank")
+        return
       } else {
-        setPageCount(pageCount + 1);
+        console.log("Hello",prAparatus)
+        document = {primary_apparatus:prAparatus}
       }
     } else if (pageCount == 5) {
       if (secAparatus == "") {
+        return;
       } else {
-        setPageCount(pageCount + 1);
+        document = {secondary_apparatus:secAparatus}
       }
     } else if (pageCount == 6) {
       if (ays == "" || ays.length < 20) {
+        return;
       } else {
-        setPageCount(pageCount + 1);
+        document = {description:ays}
       }
     }
-    setPageCount(pageCount + 1);
+    document.page = pageCount
+    console.log(document)
+    await saveTutorDetails(document)
+    .then(()=>setPageCount(pageCount + 1))
+    .catch(err=>console.log("Something went wrong",err))
+    
   };
 
   const handleBack = (e) => {

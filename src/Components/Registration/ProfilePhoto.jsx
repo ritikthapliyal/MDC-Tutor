@@ -5,20 +5,25 @@ import Button from "@mui/material/Button";
 /****************************Materail-UI**************************/
 
 import userdummypp from "../../assets/User_dummypp.svg";
+import { saveProfileImage } from "../../functions/utils";
 
 export const ProfilePhoto = (props) => {
   const [userImg, setUserImg] = useState(null);
-
+  const [img,setImg] = useState(null);
   // handle img change
   let handleImgChange = (file) => {
+    console.log(img)
+    setImg(file)
     let url = URL.createObjectURL(file);
     setUserImg(url);
   };
 
   const uploadImg = () => {
     if (userImg != null) {
-      // api call to upload img
+      console.log(userImg)
+      saveProfileImage(img)
     } else {
+      console.log("nothing is there")
       // alert asking user to upload a profile img
     }
   };

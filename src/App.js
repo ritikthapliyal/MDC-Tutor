@@ -1,29 +1,36 @@
+import { createContext, useEffect, useState } from "react";
 import "./App.css"
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import AppNavigator from "./app/AppNavigator";
 import { LoginBg } from "./auth/LoginBg";
-import { Basicdetails } from "./Components/Registration/Basicdetails";
-import { YearOfExp } from "./Components/Registration/YearOfExp";
-import { ProfilePhoto } from "./Components/Registration/ProfilePhoto";
-import ProfileUnlocking from "./Components/ProfileUnlocking/ProfileUnlocking.js"
-import Teacher_DashBoard from "./Components/Teacher-Dashboard/Teacher_DashBoard.js"
+
+// firebase lib
+import { auth } from "./config/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+
+
 
 
 function App() {
+  const [user,setUser] = useState(false);
+  const UserContext = createContext();
+  const [loading,setLoading] = useState(true);
+  useEffect(()=>{
+    setLoading(true);
+    onAuthStateChanged(auth, (userCredentials) => {
+      if (userCredentials) {
+        setUser(userCredentials)
+      } else {
+        console.log("Failed to Sign In")
+      }
+      setLoading(false);
+    });
+  },[])
+  if(loading)
+    return <h1>Loading</h1>
   return (
- <>
-  <Router>
-      <Routes>
-         <Route exact path="/login" element={<LoginBg/>}/>
-         <Route exact path="/" element={<Basicdetails/>}/>
-         <Route exact path="/pl" element={<ProfileUnlocking/>}/>
-         <Route exact path="/td" element={<Teacher_DashBoard/>}/>
-      </Routes>
-  </Router>
- </>
+    <UserContext.Provider value={{user,setUser}}>
+      {user?<AppNavigator/>:<LoginBg/>}
+    </UserContext.Provider>
   );
 }
 

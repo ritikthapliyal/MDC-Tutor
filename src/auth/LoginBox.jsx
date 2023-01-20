@@ -1,15 +1,20 @@
 import { useState } from "react";
+import { signUserWithEmailAndPassword } from "../functions/utils";
 import "./LoginBox.css";
 
 export const LoginBox = () => {
 
    const [lemail , setLemail] = useState("")// login email
-   const [lpassowrd , setLpass] = useState("") // login password
-
+   const [lpassword , setLpass] = useState("") // login password
+   function login(){
+      signUserWithEmailAndPassword(lemail,lpassword)
+      .catch(err=>console.log(err))
+      
+   } 
 
    const LoginUser = ()=>{
 
-       if(lemail=="" || lpassowrd==""){
+       if(lemail=="" || lpassword==""){
          // alert
        }
 
@@ -60,7 +65,7 @@ export const LoginBox = () => {
         </div>
 
         <div className="get-otp-btn">
-          <button  onClick={()=>{}}>LOGIN</button>
+          <button  onClick={()=>login()}>LOGIN</button>
         </div>
         <div className="login-text" style={{ fontFamily: "Poppins" }}>
           New to DoubtConnect?{" "}

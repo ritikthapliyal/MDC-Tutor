@@ -15,6 +15,7 @@ function App() {
  <>
   <Router>
       <Routes>
+         <Route exact path="/login" element={<LoginBg/>}/>
          <Route exact path="/" element={<Basicdetails/>}/>
       </Routes>
   </Router>

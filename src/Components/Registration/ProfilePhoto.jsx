@@ -15,6 +15,14 @@ export const ProfilePhoto = (props) => {
     setUserImg(url);
   };
 
+  const uploadImg = () => {
+    if (userImg != null) {
+      // api call to upload img
+    } else {
+      // alert asking user to upload a profile img
+    }
+  };
+
   return (
     <>
       <div className="bd-container">
@@ -70,8 +78,8 @@ export const ProfilePhoto = (props) => {
                       boxShadow: "none",
                     }}
                     variant="contained"
-                    onClick={()=>{
-                      props.setPageCount(props.pageCount-1)
+                    onClick={() => {
+                      props.setPageCount(props.pageCount - 1);
                     }}
                   >
                     Back
@@ -87,9 +95,7 @@ export const ProfilePhoto = (props) => {
                       boxShadow: "none",
                     }}
                     variant="contained"
-                    onClick={()=>{
-                      props.setPageCount(props.pageCount+1)
-                    }}
+                    onClick={() => {uploadImg()}}
                   >
                     Submit{" "}
                   </Button>

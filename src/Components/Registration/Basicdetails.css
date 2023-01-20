@@ -165,17 +165,17 @@
   border-radius: 50%;
 }
 
-.user-photo>img{
+.user-photo > img {
   height: 100%;
   width: 100%;
 }
 
-.upl-photo{
+.upl-photo {
   width: 30%;
   height: 10%;
 }
 
-.upl-photo>button{
+.upl-photo > button {
   height: 100%;
   width: 100%;
 }
@@ -186,6 +186,25 @@
 
 .f-btns {
   width: 60%;
+}
+.btn-back > button {
+  background: #f3f3f3;
+  color: black;
+  height: 55px;
+  width: 152px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.btn-back > button:hover {
+  background: #f3f3f3;
+}
+
+.btn-next > button {
+  height: 55px;
+  width: 152px;
+  border-radius: 10px;
+  outline: none;
 }
 
 .form-btns {

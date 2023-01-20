@@ -18,8 +18,37 @@ import { ProfilePhoto } from "./ProfilePhoto";
 /****************************Materail-UI**************************/
 
 export const Basicdetails = () => {
-  const [date, setDate] = useState(null);
   const [textAreaCount, ChangeTextAreaCount] = useState(0);
+
+  /**********************page 1 state***********************/
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [acadQualification, setAcadQual] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [dob, setDate] = useState(null);
+  /*********************page 1 state************************/
+
+  /**************************page 2 state************************/
+  const [prlang, setPrLang] = useState("");
+  /**************************page 2 state************************/
+
+  /**************************page 3 state************************/
+  const [seclang, setSecLang] = useState("");
+  /**************************page 3 state************************/
+
+  /**************************page 4 state****************************/
+  const [prAparatus, setPrAparatus] = useState("");
+  /**************************page 4 state****************************/
+
+  /**************************page 5 state****************************/
+  const [secAparatus, setSecAparatus] = useState("");
+  /**************************page 5 state****************************/
+
+  /**************************page 6 state****************************/
+  const [ays, setAys] = useState("");
+  /**************************page 6 state****************************/
+
   const [pageCount, setPageCount] = useState(1);
 
   // count for textarea words
@@ -28,6 +57,46 @@ export const Basicdetails = () => {
   };
 
   const handleNext = (e) => {
+    if (pageCount == 1) {
+      if (
+        name == "" ||
+        email == "" ||
+        acadQualification == "" ||
+        city == "" ||
+        state == "" ||
+        dob == ""
+      ) {
+        // alert to fill all acad details
+      } else {
+        // api to save details till now and pageCount
+        setPageCount(pageCount + 1);
+      }
+    } else if (pageCount == 2) {
+      if (prlang == "") {
+      } else {
+        setPageCount(pageCount + 1);
+      }
+    } else if (pageCount == 3) {
+      if (seclang == "") {
+      } else {
+        setPageCount(pageCount + 1);
+      }
+    } else if (pageCount == 4) {
+      if (prAparatus == "") {
+      } else {
+        setPageCount(pageCount + 1);
+      }
+    } else if (pageCount == 5) {
+      if (secAparatus == "") {
+      } else {
+        setPageCount(pageCount + 1);
+      }
+    } else if (pageCount == 6) {
+      if (ays == "" || ays.length < 20) {
+      } else {
+        setPageCount(pageCount + 1);
+      }
+    }
     setPageCount(pageCount + 1);
   };
 
@@ -69,6 +138,7 @@ export const Basicdetails = () => {
                     label="Full Name"
                     variant="outlined"
                     fullWidth
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className="form-email bd">
@@ -77,13 +147,14 @@ export const Basicdetails = () => {
                     label="Email Address"
                     variant="outlined"
                     fullWidth
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="form-birthday bd">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker
                       label="Select your birthday"
-                      value={date}
+                      value={dob}
                       onChange={(newValue) => {
                         setDate(newValue);
                       }}
@@ -99,16 +170,22 @@ export const Basicdetails = () => {
                     label="Highest Academic Qualification"
                     variant="outlined"
                     fullWidth
+                    onChange={(e) => setAcadQual(e.target.value)}
                   />
                 </div>
                 <div className="form-add bd">
                   <div className="add-city">
                     <FormControl style={{ width: "90%" }}>
-                      <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                      <InputLabel id="demo-simple-select-label">
+                        City
+                      </InputLabel>
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         label="Select City"
+                        onChange={(e) => {
+                          setCity(e.target.value);
+                        }}
                       >
                         <MenuItem value={10}>Ten</MenuItem>
                         <MenuItem value={20}>Twenty</MenuItem>
@@ -118,11 +195,16 @@ export const Basicdetails = () => {
                   </div>
                   <div className="add-state">
                     <FormControl style={{ width: "90%" }}>
-                      <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                      <InputLabel id="demo-simple-select-label">
+                        State
+                      </InputLabel>
                       <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         label="Select State"
+                        onChange={(e) => {
+                          setState(e.target.value);
+                        }}
                       >
                         <MenuItem value={10}>Ten</MenuItem>
                         <MenuItem value={20}>Twenty</MenuItem>
@@ -193,6 +275,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setPrLang(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-email bd">
@@ -203,6 +288,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setPrLang(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-birthday bd">
@@ -213,6 +301,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setPrLang(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-edu bd">
@@ -223,6 +314,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setPrLang(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-edu bd">
@@ -233,6 +327,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setPrLang(e.target.value);
+                    }}
                   />
                 </div>
 
@@ -314,6 +411,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setSecLang(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-email bd">
@@ -324,6 +424,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setSecLang(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-birthday bd">
@@ -334,6 +437,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setSecLang(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-edu bd">
@@ -344,6 +450,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setSecLang(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-edu bd">
@@ -354,6 +463,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setSecLang(e.target.value);
+                    }}
                   />
                 </div>
 
@@ -453,14 +565,6 @@ export const Basicdetails = () => {
                   <div className="f-btns">
                     <div className="btn-back">
                       <Button
-                        style={{
-                          background: "#F3F3F3",
-                          color: "black",
-                          height: "55px",
-                          width: "152px",
-                          borderRadius: "10px",
-                          outline: "none",
-                        }}
                         variant="contained"
                         onClick={() => {
                           handleBack();
@@ -471,12 +575,6 @@ export const Basicdetails = () => {
                     </div>
                     <div className="btn-next">
                       <Button
-                        style={{
-                          height: "55px",
-                          width: "152px",
-                          borderRadius: "10px",
-                          outline: "none",
-                        }}
                         variant="contained"
                         onClick={() => {
                           handleNext();
@@ -525,6 +623,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setSecAparatus(e.target.value);
+                    }}
                   />
                 </div>
                 <div className="form-email bd">
@@ -535,6 +636,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setSecAparatus(e.target.value);
+                    }}
                   />
                 </div>
 
@@ -546,6 +650,9 @@ export const Basicdetails = () => {
                     variant="outlined"
                     inputProps={{ readOnly: true }}
                     fullWidth
+                    onClick={(e) => {
+                      setSecAparatus(e.target.value);
+                    }}
                   />
                 </div>
 
@@ -554,14 +661,6 @@ export const Basicdetails = () => {
                   <div className="f-btns">
                     <div className="btn-back">
                       <Button
-                        style={{
-                          background: "#F3F3F3",
-                          color: "black",
-                          height: "55px",
-                          width: "152px",
-                          borderRadius: "10px",
-                          outline: "none",
-                        }}
                         variant="contained"
                         onClick={() => {
                           handleBack();
@@ -572,12 +671,6 @@ export const Basicdetails = () => {
                     </div>
                     <div className="btn-next">
                       <Button
-                        style={{
-                          height: "55px",
-                          width: "152px",
-                          borderRadius: "10px",
-                          outline: "none",
-                        }}
                         variant="contained"
                         onClick={() => {
                           handleNext();
@@ -634,7 +727,9 @@ export const Basicdetails = () => {
                     type="text"
                     rows={10}
                     className="full_height_Width"
-                    onChange={recalculate}
+                    onChange={(e) => {
+                      setAys(e.target.value);
+                    }}
                   />
                 </div>
 
@@ -643,15 +738,6 @@ export const Basicdetails = () => {
                   <div className="f-btns">
                     <div className="btn-back">
                       <Button
-                        style={{
-                          background: "#F3F3F3",
-                          color: "black",
-                          height: "55px",
-                          width: "152px",
-                          borderRadius: "10px",
-                          outline: "none",
-                          boxShadow: "none",
-                        }}
                         variant="contained"
                         onClick={() => {
                           handleBack();
@@ -662,13 +748,6 @@ export const Basicdetails = () => {
                     </div>
                     <div className="btn-next">
                       <Button
-                        style={{
-                          height: "55px",
-                          width: "152px",
-                          borderRadius: "10px",
-                          outline: "none",
-                          boxShadow: "none",
-                        }}
                         variant="contained"
                         onClick={() => {
                           handleNext();
@@ -685,11 +764,23 @@ export const Basicdetails = () => {
         ) : (
           ""
         )}
-        {pageCount==7?(<YearOfExp pageCount={pageCount} setPageCount={setPageCount}></YearOfExp>):("")}
-      {pageCount==8?(<ProfilePhoto pageCount={pageCount} setPageCount={setPageCount}></ProfilePhoto>):("")}
+        {pageCount == 7 ? (
+          <YearOfExp
+            pageCount={pageCount}
+            setPageCount={setPageCount}
+          ></YearOfExp>
+        ) : (
+          ""
+        )}
+        {pageCount == 8 ? (
+          <ProfilePhoto
+            pageCount={pageCount}
+            setPageCount={setPageCount}
+          ></ProfilePhoto>
+        ) : (
+          ""
+        )}
       </div>
-
-
     </>
   );
 };

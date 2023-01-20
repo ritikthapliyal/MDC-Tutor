@@ -1,6 +1,29 @@
+import { useState } from "react";
 import "./LoginBox.css";
 
 export const LoginBox = () => {
+
+   const [lemail , setLemail] = useState("")// login email
+   const [lpassowrd , setLpass] = useState("") // login password
+
+
+   const LoginUser = ()=>{
+
+       if(lemail=="" || lpassowrd==""){
+         // alert
+       }
+
+       // login using firebase
+   }
+
+
+  // login firebase
+
+  // email -> pageCount , isComp
+
+  // isComp -> true -> dashboard
+  // isComp -> false -> pageCount -> pageCount (params) -> params -> basicdetails -> pageCount(params.id)
+
   return (
     <>
       <div className="login-container">
@@ -17,7 +40,7 @@ export const LoginBox = () => {
         </div>
         <div className="break-line"></div>
 
-        <div className="l-phlogin">
+        {/* <div className="l-phlogin">
           <div className="phn-id-dropdown"></div>
           <div className="phno-text">
             <div className="phn-code">+91</div>
@@ -25,13 +48,23 @@ export const LoginBox = () => {
               <input type="text" placeholder="Enter Phone Number"/>
             </div>
           </div>
+        </div> */}
+
+        <div className="l-emailPass">
+          <div className="l-email">
+            <input type="text" placeholder="Enter email" onChange={(e)=>{setLemail(e.target.value)}} />
+          </div>
+          <div className="l-password">
+            <input type="password" placeholder="Enter password" onChange={(e)=>{setLpass(e.target.value)}} />
+          </div>
         </div>
+
         <div className="get-otp-btn">
-          <button>Get OTP</button>
+          <button  onClick={()=>{}}>LOGIN</button>
         </div>
         <div className="login-text" style={{ fontFamily: "Poppins" }}>
           New to DoubtConnect?{" "}
-          <span style={{ color: "#4E89FC" }}>Create account</span>
+          <span style={{ color: "#4E89FC" }}> Create account</span>
         </div>
       </div>
     </>

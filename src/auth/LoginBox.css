@@ -1,6 +1,6 @@
 .login-container {
   position: absolute;
-  height: 30rem;
+  height: 31rem;
   width: 30rem;
   top: 5rem;
   right: 10rem;
@@ -14,12 +14,13 @@
   align-items: center;
   text-align: center;
   padding: 2rem;
+  padding-top: 1.5rem;
   padding-bottom: 0rem;
 }
 
-.login-container>div {
+.login-container > div {
   width: 100%;
-  height: 25%;
+  height: 20%;
 }
 
 .l-head h2 {
@@ -30,17 +31,17 @@
 
 .l-glogin {
   width: 90% !important;
-  height: 15% !important;
+  height: 10% !important;
   border: 1px solid lightgray;
   border-radius: 60px;
 }
 
-.break-line{
+.break-line {
   width: 100%;
-  height: 5%;
+  height: 10% !important;
 }
 
-.l-phlogin{
+.l-phlogin {
   width: 100%;
   height: 20%;
   display: flex;
@@ -48,31 +49,31 @@
   justify-content: space-evenly;
 }
 
-.phn-id-dropdown{
-    width: 15%;
-    height: 60%;
-    border: 1.32633px solid #C9CDD5;
-    border-radius: 14px;
+.phn-id-dropdown {
+  width: 15%;
+  height: 60%;
+  border: 1.32633px solid #c9cdd5;
+  border-radius: 14px;
 }
 
-.phno-text{
+.phno-text {
   width: 65%;
   height: 60%;
-  border: 1.32633px solid #C9CDD5;
+  border: 1.32633px solid #c9cdd5;
   border-radius: 14px;
   display: flex;
 }
 
-.phn-code{
-   height: 100%;
-   width: 20%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: 16px;
+.phn-code {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
 }
 
-.phn-text{
+.phn-text {
   height: 100%;
   width: 80%;
   display: flex;
@@ -80,19 +81,70 @@
   align-items: center;
 }
 
-.phn-text>input{
+.phn-text > input {
   outline: none;
   border: none;
   font-size: 16px;
 }
+.get-otp-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
 
-.get-otp-btn>button {
+.get-otp-btn > button {
   width: 90%;
   height: 65%;
   background: #4e89fc;
   color: white;
   border: none;
   border-radius: 10px;
+}
+
+.l-emailPass {
+  height: 30%!important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.l-emailPass > div {
+  width: 90%;
+  height: 45%;
+  border: 1px solid red;
+  border-radius: 10px;
+  border: 1px solid #c9cdd5;
+}
+
+.l-email {
+}
+
+.l-email > input {
+  width: 99%;
+  height: 99%;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.l-password {
+}
+
+.l-password > input {
+  width: 99%;
+  height: 99%;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.login-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10% !important;
 }
 
 @media screen and (max-width: 1300px) {
@@ -141,8 +193,8 @@
     left: 2rem;
   }
 
-  .l-head h2{
-     font-size: 1.5rem;
+  .l-head h2 {
+    font-size: 1.5rem;
   }
 }
 
@@ -155,7 +207,7 @@
     left: 1rem;
   }
 
-  .l-head h2{
-     font-size: 1.5rem;
+  .l-head h2 {
+    font-size: 1.5rem;
   }
 }

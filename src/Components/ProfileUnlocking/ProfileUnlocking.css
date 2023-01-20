@@ -1,0 +1,33 @@
+.profile-unlocking{
+    position: relative;
+}
+
+.profile-unlocking img{
+    left: 4.28rem;
+    top: -8.5rem;
+    position: absolute;
+}
+
+.profile-unlocking-container{
+    width: 50rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+    gap: 1rem;
+}
+
+.profile-unlocking-container span, .profile-unlocking-container a, .profile-unlocking-container h3{
+    color: #4E89FC;
+}
+
+.profile-unlocking-container div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.profile-unlocking-container p{
+    margin-bottom: 0;
+    line-height: 1.8rem;
+}

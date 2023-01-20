@@ -1,0 +1,22 @@
+.Requests{
+    height: 542px;
+    width: 788px;
+    background-color: white;
+    border-radius: 1rem;
+
+    padding: 1rem;
+}
+
+.Requests-Options{
+}
+.Requests-Options button{
+    
+        outline: none;
+        border: none;
+
+        background-color: white;
+    
+        cursor: pointer;
+
+        transition: 0.3s;
+}

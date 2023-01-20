@@ -1,0 +1,85 @@
+.ProfileSummary{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 24.25rem;
+    height: 42.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    position: relative;
+    background-color: white;
+    border-radius: 1.2rem;
+
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.ProfileSummary h4{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0.02em;
+    color:#51C485;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+
+.ProfileSummary p{
+    
+    height: 34px;
+    width: 268px;
+
+
+    color: #706E6E;
+    background-color: #F3F3F3;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 0;
+
+    border-radius: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProfileSummary h2{
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0.02em;
+    color: #1E2330;
+    margin-bottom: 0;
+}
+
+.ProfileSummary div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.ProfileSummary button{
+    position: absolute;
+    top: 38rem;
+
+    outline: none;
+    border: 2px solid #4E89FC;
+
+    height: 55px;
+    width: 152px;
+    border-radius: 1rem;
+
+    background-color: white;
+    color: #4E89FC;
+
+    cursor: pointer;
+
+}
+

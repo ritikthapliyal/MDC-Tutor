@@ -5,6 +5,7 @@ import Profile from './Profile/Profile'
 import Dashboard from './Dashboard/Dashboard'
 import Analytics from './Analytics/Analytics'
 import Activity from './Activity/Activity'
+import Teacher_Header from './Teacher_Header/Teacher_Header'
 
 
 function Teacher_Dashboard() {
@@ -13,7 +14,7 @@ function Teacher_Dashboard() {
 
     return (
         <Fragment>
-            <div></div>
+            <Teacher_Header/>
             <div className='teacher-dashboard'>
                 <div className='dashboard-options'>
                     <button 

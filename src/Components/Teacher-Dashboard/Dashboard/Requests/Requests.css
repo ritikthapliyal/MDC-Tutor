@@ -1,15 +1,55 @@
 .Requests{
-    height: 542px;
-    width: 788px;
+    height: 26.3rem;
+    width: 100%;
     background-color: white;
     border-radius: 1rem;
 
     padding: 1rem;
 }
 
-.Requests-Options{
+
+.RequestsHeader {
+    display: flex;
+    height: 20%;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
 }
-.Requests-Options button{
+
+.RequestsHeader h1{
+    height: 2rem;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.RequestsHeader span{
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    background-color: #4E89FC;
+    color: white;
+    padding-top: 0.1rem;
+}
+
+
+
+
+.Requests-Left{
+    display: flex;
+    gap: 1rem;
+}
+.Requests-Right{
+    display: flex;
+    gap: 1.4rem;
+}
+
+
+.Requests-Right button{
     
         outline: none;
         border: none;
@@ -19,4 +59,238 @@
         cursor: pointer;
 
         transition: 0.3s;
+}
+
+
+.Request-Container{
+    width: 104.2%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Request-Container:after{
+    content: "";
+    margin: 1.4rem;
+}
+
+
+/* ////////////////////////////////////////////////////////////// */
+
+.Request{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #DDE0E4;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    align-items: center;
+}
+.Request:hover{
+    border: 2px solid #4e89fc;
+}
+
+.Request-Left{
+    width: 50%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.Request-Left img{
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+.Request-Left p{
+    color: #898B8D;
+    margin-bottom: 0;
+}
+.Request-Left h5{
+    margin-bottom: 0;
+}
+.Request-Left span{
+    color: #4e89fc;
+}
+
+
+
+
+.Request-Right{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.Request-Right button{
+    outline: none;
+    border: none;
+    width: 6rem;
+    padding: .4rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+
+
+/* ///////////////////////////////////////////////////////////////// */
+
+.RequestOverlay-Wrapper{
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+
+
+/* ////////////////////////////////////////////////// */
+
+.RequestDetails{
+    position: fixed;
+    top:50%;
+    left:50%;
+    background-color: white;
+    transform: translate(-50%,-50%);
+    z-index: 10000;
+    width: 60%;
+    height: 70%;
+}
+.RequestDetails button{
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+.RequestOverlay-Header{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: space-between;
+}
+.RequestOverlay-Header div{
+    gap:1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.RequestOverlay-Header-Left h1{
+    margin: 0;
+    font-size: 1.4rem;
+}
+.RequestOverlay-Header-Left button{
+    outline: none;
+    border: none;
+    width: 4rem;
+    height: 2rem;
+}
+.RequestOverlay-Header-Left button{
+    width: 3rem;
+    height: 2rem;
+    background-color: white;
+}
+.RequestOverlay-Header-Left button:hover{
+    cursor: pointer;
+}
+
+
+
+.RequestOverlay-Header-Right button{
+    width: 6rem;
+    padding: .4rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.RequestDetails-Body{
+    height: 86%;
+    display: grid;
+    padding: 1rem 2rem;
+    grid-template-columns: 40% 50%;
+    gap: 2rem;
+}
+.RequestDetails-Body img{
+    width: 114%;
+    position: relative;
+    height: 100%;
+}
+.RequestDetails-Body svg{
+    position: absolute;
+    left: 88%;
+    bottom: 10%;
+}
+
+.RequestDetails-Body-Left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.RequestDetails-Body-1{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+.RequestDetails-Body-1 p{
+    margin: 0;
+    color: #606060;
+    font-weight: 600;
+}
+.RequestDetails-Body-1 span{
+    color: #606060;
+    font-weight: 100;
+}
+
+
+
+.RequestDetails-Body-2 {
+    display: flex;
+    flex-direction: column;
+    gap:.6rem;
+}
+.RequestDetails-Body-2 h4{
+    margin: 0;
+}
+.RequestDetails-Body-2 div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .6rem;
+}
+
+
+.RequestDetails-Criteria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.RequestDetails-Criteria svg{
+    position: initial
+}
+.RequestDetails-Criteria p{
+    margin: 0;
+}
+
+
+
+.RequestDetails-Body-3{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+.RequestDetails-Body-3 p{
+    font-size: .8rem;
+    margin: 0;
+}
+.RequestDetails-Body-3 svg{
+    position: initial
 }

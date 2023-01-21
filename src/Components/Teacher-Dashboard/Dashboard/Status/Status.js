@@ -14,13 +14,13 @@ function Status() {
                 <h1>Status</h1>
                 <div className='Toggle' style={{ backgroundColor : `${status ? "#51C485" : "#c45151"}`}}>
                     
-                    <p style={{ transform : `translateX(${ status ? "20px" : "38px"})`}}>
+                    <p style={{ transform : `translateX(${ status ? "12px" : "36px"})`}}>
                         { status ? "Online" : "Offline"}
                     </p>
                     <div 
                         onClick={()=>setStatus(!status)} 
                         className='Toggle-Ball' 
-                        style={{ transform : `translateX(${ status ? "30px" : "-53px"})`}}></div>
+                        style={{ transform : `translateX(${ status ? "24px" : "-42px"})`}}></div>
                 </div>
             </div>
 

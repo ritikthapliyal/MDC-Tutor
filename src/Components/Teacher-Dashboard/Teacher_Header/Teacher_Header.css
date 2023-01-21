@@ -1,0 +1,20 @@
+.teacher-header{
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .4rem 2.4rem;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.teacher-header-options div{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.teacher-header-options button{
+    background-color: inherit;
+    border: none;
+    outline: none;
+}

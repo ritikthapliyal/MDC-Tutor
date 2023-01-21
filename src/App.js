@@ -8,8 +8,6 @@ import { auth } from "./config/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 
-
-
 function App() {
   const [user,setUser] = useState(false);
   const UserContext = createContext();
